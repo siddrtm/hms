@@ -1,0 +1,6 @@
+
+create trigger patientage1 after insert on patient
+for each row
+begin
+insert into patientage values (new.dob , YEAR(CURDATE())-YEAR(new.dob));
+end//
